@@ -66,34 +66,51 @@ $(function () {
     },
   });
 
-  // ---------------- btn up---------------------------------------
-  $(".back_top").hide();
 
-  
-
+//  ----------- header on scroll ---------------------------
 
   $(function () {
-    $(window).resize(function() {
-      if ( $(window).width() > 950 ) {
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 50) {
-            $(".back-top").fadeIn();
-            $(".header__top").hide();
-            $(".header__bottom").css("background-color", "#5b8792");
-            $(".menu__link, .jq-selectbox__select").css("color", "#ffffff");
-            $(".select__line").css("background-color", "#ffffff");
-          } else {
-            $(".back-top").fadeOut();
-            $(".header__top").show();
-            $(".header__bottom").css("background-color", "#ffffff");
-            $(".menu__link, .jq-selectbox__select").css("color", "#1a1919");
-            $(".select__line").css("background-color", "#1a1919");
-          }
-        });
-      } 
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 5) {
+        $(".header__top").hide();
+        $(".header__bottom").css("background-color", "#5b8792");
+        $(".menu__link, .jq-selectbox__select").css("color", "#ffffff");
+        $(".select__line").css("background-color", "#ffffff");
+      } else {
+        $(".header__top").show();
+        $(".header__bottom").css("background-color", "#ffffff");
+        $(".menu__link, .jq-selectbox__select").css("color", "#1a1919");
+        $(".select__line").css("background-color", "#1a1919");
+      }
     });
-    
+  });
 
+  $(window).resize(function () {
+    if ($(window).width() < 950) {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 5) {
+          $(".header__top").show();
+          $(".menu__link, .jq-selectbox__select").css("color", "#1a1919");
+          $(".select__line").css("background-color", "#1a1919");
+        }
+      });
+    }
+  });
+
+
+  // ---------------- btn up---------------------------------------
+
+
+  $(".back_top").hide();
+
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $(".back-top").fadeIn();
+      } else {
+        $(".back-top").fadeOut();
+      }
+    });
     $(".back_top a").click(function () {
       $("body,html").animate(
         {
@@ -150,7 +167,7 @@ $(function () {
       requestAnimationFrame(delayMouseFollow);
 
       revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
-      revisedMousePosY += ((mousePosY - revisedMousePosY ) - s)/ delay;
+      revisedMousePosY += ((mousePosY - revisedMousePosY) - s) / delay;
 
       mouseCircle.style.top = revisedMousePosY + "px";
       mouseCircle.style.left = revisedMousePosX + "px";
