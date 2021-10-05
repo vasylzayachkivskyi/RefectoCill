@@ -107,7 +107,7 @@
 
   @keyframes moveSlideshow {
     100% {
-      transform: translate3d(calc(-100% + 450vw), 0, 0);
+      transform: translate3d(calc(-100% + 500vw), 0, 0);
     }
   }
 }
@@ -313,5 +313,20 @@
   .footer__col-sevice,
 .footer__col-contacts {
     padding-left: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .main__col,
+.main__col-item {
+    justify-content: center;
+  }
+
+  .sale__slider .sale__slider-item {
+    width: 80% !important;
+  }
+
+  .contact__inner {
+    width: 100%;
+    padding: 0 12px;
   }
 }

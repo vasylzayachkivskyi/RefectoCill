@@ -21,6 +21,12 @@ $(function () {
         slidesToShow: 3,
         slidesToScroll: 1
       }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
     }]
   }); // ------------------ tabs--------------------------
 
@@ -40,7 +46,7 @@ $(function () {
       600: {
         slidesPerView: 2
       },
-      720: {
+      768: {
         slidesPerView: 3
       },
       1000: {
@@ -88,7 +94,7 @@ $(function () {
   $(".back_top").hide();
   $(function () {
     $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
+      if ($(this).scrollTop() > 500) {
         $(".back-top").fadeIn();
       } else {
         $(".back-top").fadeOut();

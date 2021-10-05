@@ -5382,11 +5382,18 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.main__col-item a {
+  overflow: hidden;
+}
 .main__col-item img {
   max-width: 580px;
   width: 100%;
   height: 100%;
   background-size: cover;
+  transition: all 0.3s;
+}
+.main__col-item img:hover {
+  transform: scale(1.1);
 }
 
 .sale__carousel {
@@ -5702,6 +5709,9 @@ body {
   right: 50px;
   transition: all 0.3s;
 }
+.aside__item-btn:hover {
+  opacity: 0.9;
+}
 .aside__item-btn:hover::after {
   right: 20px;
 }
@@ -5853,10 +5863,18 @@ body {
   overflow: hidden;
   margin-bottom: 25px;
 }
+.blog__item-img a {
+  width: 100%;
+}
 .blog__item-img img {
   width: 100%;
   height: auto;
   background-size: cover;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.blog__item-img img:hover {
+  transform: scale(1.1);
 }
 
 .blog__irem-title {
@@ -5904,6 +5922,10 @@ body {
   font-size: 15px;
   line-height: 24px;
   color: #1a1919;
+  transition: all 0.3s;
+}
+.blog__item-link a:hover {
+  opacity: 0.7;
 }
 
 .widget__inner-image {
@@ -5967,6 +5989,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s;
+}
+.contact__btn:hover {
+  opacity: 0.6;
 }
 .contact__btn p {
   padding-left: 5px;
@@ -6223,7 +6249,7 @@ body {
 
   @keyframes moveSlideshow {
     100% {
-      transform: translate3d(calc(-100% + 450vw), 0, 0);
+      transform: translate3d(calc(-100% + 500vw), 0, 0);
     }
   }
 }
@@ -6362,7 +6388,7 @@ body {
 
   .jq-selectbox li {
     min-height: 18px;
-    padding: 5px 10px 6px;
+    padding: 5px 0px 6px;
     color: #231f20;
   }
 
@@ -6414,7 +6440,7 @@ body {
 }
 @media (max-width: 860px) {
   .sale__slider .sale__slider-item {
-    width: 200px !important;
+    width: 220px !important;
   }
 
   .slider__item-link a {
@@ -6429,5 +6455,15 @@ body {
   .footer__col-sevice,
 .footer__col-contacts {
     padding-left: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .main__col,
+.main__col-item {
+    justify-content: center;
+  }
+
+  .sale__slider .sale__slider-item {
+    width: 80% !important;
   }
 }
